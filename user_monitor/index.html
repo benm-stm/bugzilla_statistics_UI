@@ -1,0 +1,114 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='/user_monitor/lib/css/linechart.css'>
+<link rel='stylesheet' type='text/css' href='/user_monitor/lib/css/prettify.css'>
+<link rel='stylesheet' type='text/css' href='/user_monitor/lib/css/tipsy.css'>
+<link rel='stylesheet' type='text/css' href='/user_monitor/lib/bootstrap-3.3.4-dist/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/user_monitor/lib/bootstrap-3.3.4-dist/css/bootstrap-datepicker3.min.css'>
+<link rel='stylesheet' type='text/css' href='/user_monitor/lib/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css'>
+
+<script src='/user_monitor/lib/js/jquery-1.11.2.min.js' type='text/javascript'></script>
+
+<script src='/user_monitor/lib/bootstrap-3.3.4-dist/js/bootstrap.min.js' type='text/javascript'></script>
+<script src='/user_monitor/lib/bootstrap-3.3.4-dist/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+
+<script src='/user_monitor/lib/js/import_json.js' type='text/javascript'></script>
+<script src='/user_monitor/lib/js/plot.js' type='text/javascript'></script>
+
+<script src='/user_monitor/lib/js/json_to_csv.js' type='text/javascript'></script>
+<script src='/user_monitor/lib/js/svg-crowbar.js' type='text/javascript'></script>
+
+<script src='/user_monitor/lib/js/jquery.tipsy.js' type='text/javascript'></script>
+<script src='/user_monitor/lib/js/d3.v3.min.js' type='text/javascript'></script>
+
+</head>
+<body class='bg'>
+<nav class='navbar navbar-inverse navbar-static-top'>
+<center><p class='top'>User monitoring</p></center>
+</nav>
+
+<div class='container'>
+<br>
+
+<!--form-->
+<div id = "cnx_per_day">
+<form id="form_cnx_per_day" data-toggle='validator'>
+<center>
+<h4>Date range</h4>
+</center>
+<div class="input-group" id="datepicker">
+<input type="text" class="input-sm form-control input-daterange_right" id="begin_date"  placeholder="click on me"  required />
+<span class="input-group-addon">to</span>
+<input type="text" class="input-sm form-control input-daterange_left" id="end_date" placeholder="click on me" required />
+</div>
+<br>
+<input id="sub_form" type="submit" value="Submit" class="btn btn-lg btn-primary center-block">
+</form>
+</div>
+
+</form>
+</div>
+</div>
+
+
+<br><br>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-2 col-md-offset-5">
+<div id="progress_bar" class="progress hidden">
+<div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%">
+Please wait ...
+</div>
+</div>
+</div>
+</div>
+
+<div id="alert" class="container alert" role="alert"></div>
+
+<!-- graph -->
+<div class="row container-fluid">
+<div class="col-md-offset-1 col-md-3 well-sm hidden" id="side_bar">
+<div class="row-fluid">
+<div class="well well-sm">
+<div><center><h4>Partners</h4></center></div>
+<div id="partners"></div>
+</div>
+<div class="well well-sm">
+<div><center><h4>Connected users per day</h4></center></div>
+<div class="panel-group" id="accordion">
+</div> 
+</div>
+</div>
+</div>
+
+<div class="col-md-7">
+<div id="plot" class="container plot hidden rounded_border col-md-12"></div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-1 col-md-offset-10">
+<div class="btn-group">
+  <button id="download" type="button" class="btn btn-default dropdown-toggle hidden pull-right" data-toggle="dropdown" aria-expanded="false">
+    Download <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a onclick="download_img()">Download graph</a></li>
+    <li><a onclick="download_csv()">Download CSV</a></li>
+  </ul>
+</div>
+</div>
+
+<div style="margin-bottom:150px">&nbsp;</div>
+</div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" style="padding-top:7px">
+  <div class="container">
+    <center><h6>STMicroelectronics</h6></center>
+  </div>
+</nav>
+
+</body>
+</html>
