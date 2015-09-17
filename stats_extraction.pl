@@ -240,11 +240,11 @@ my $dbh = undef;
 
 # CONFIG VARIABLES
 my $platform = "mysql";
-my $database = "intbugs";
-my $host = "bugzillaqadb.st.com";
-my $port = "3308";
-my $user = "intbugsadm";
-my $pw = "0/admin";
+my $database = "****";
+my $host = "****";
+my $port = "****";
+my $user = "****";
+my $pw = "****";
 my $socket = "";
 
 #dirs
