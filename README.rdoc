@@ -1,4 +1,5 @@
 #Server Side
+
 The bugzilla machine will contain a perl script to extract the daily stats from the bugzilla’s DB, you can find below both sql queries used to extract respectively the users activities and the daily users connection :
 SELECT DISTINCT(login_name)
                                 FROM profiles
