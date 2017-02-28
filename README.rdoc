@@ -1,4 +1,4 @@
-I.	Server Side
+#I.	Server Side
 The bugzilla machine will contain a perl script to extract the daily stats from the bugzilla’s DB, you can find below both sql queries used to extract respectively the users activities and the daily users connection :
 SELECT DISTINCT(login_name)
                                 FROM profiles
@@ -25,12 +25,16 @@ The results will be saved in two json files to ease their parse.
 
 PS: should be croned before midnight of each day
 
-II.	Client Side
+#II.	Client Side
+
 The web app will import json files parse them and present the result to the user, so the latter one will get:
+
 -	A chart for the given date pool (connection per day)
 -	The total users connections
 -	The companies connected in the given pool
 -	The user mail for each day
+
 The user will be able to:
+
 -	Download the chart.
 -	Download the svg chart corresponding to the specified date pool.
